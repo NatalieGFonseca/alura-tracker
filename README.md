@@ -1,5 +1,12 @@
 # alura-tracker
 
+## About the projetct
+
+```
+    descricao do que fiz e foi aprendido 
+```
+
+
 ## Project setup
 ```
 npm install
