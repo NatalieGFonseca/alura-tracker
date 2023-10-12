@@ -2,122 +2,27 @@
   "projetos": [
     {
       "id": 1,
-      "nome": "Alura tra"
-    },
-    {
-      "nome": "dd",
-      "id": 6
-    },
-    {
-      "nome": "yuu",
-      "id": 7
+      "nome": "Alura tracker"
     }
   ],
   "tarefas": [
     {
       "tempo": 2,
-      "descricao": "gfgdfgyy",
+      "descricao": "estudo de Vue3",
+      "projeto": {
+        "id": 1,
+        "nome": "Alura tracker"
+      },
+      "id": 1
+    },
+    {
+      "tempo": 2,
+      "descricao": "estudo de TypeScript",
       "projeto": {
         "id": 1,
         "nome": "Alura tracker"
       },
       "id": 2
-    },
-    {
-      "tempo": 1,
-      "descricao": "globo hj",
-      "id": 3
-    },
-    {
-      "tempo": 3,
-      "descricao": "friends",
-      "projeto": {
-        "id": 2,
-        "nome": "aaaaaaaaaaa"
-      },
-      "id": 4
-    },
-    {
-      "tempo": 4,
-      "descricao": "jjjj",
-      "projeto": {
-        "id": 4,
-        "nome": "fgrtgtryyyyyyy"
-      },
-      "id": 5
-    },
-    {
-      "tempo": 4,
-      "descricao": "vfgfrt",
-      "projeto": {
-        "id": 1,
-        "nome": "Alura tracker"
-      },
-      "id": 6
-    },
-    {
-      "tempo": 2,
-      "descricao": "dasdasd",
-      "projeto": {
-        "id": 2,
-        "nome": "aaaaaaaaaaa"
-      },
-      "id": 7
-    },
-    {
-      "tempo": 1,
-      "descricao": "fsfsd",
-      "projeto": {
-        "id": 4,
-        "nome": "fgrtgtryyyyyyy"
-      },
-      "id": 8
-    },
-    {
-      "tempo": 1,
-      "descricao": "ffdd",
-      "id": 9
-    },
-    {
-      "tempo": 2,
-      "descricao": "ddddd",
-      "projeto": {
-        "id": 1,
-        "nome": "Alura tracker"
-      },
-      "id": 10
-    },
-    {
-      "tempo": 3,
-      "descricao": "yyyyyy",
-      "projeto": {
-        "id": 1,
-        "nome": "Alura tracker"
-      },
-      "id": 11
-    },
-    {
-      "tempo": 2,
-      "descricao": "dwefew",
-      "id": 12
-    },
-    {
-      "tempo": 3,
-      "descricao": "hythyt",
-      "projeto": {
-        "nome": "dd",
-        "id": 6
-      },
-      "id": 13
-    },
-    {
-      "tempo": 2,
-      "descricao": "hythyt443",
-      "projeto": {
-        "nome": "dd",
-        "id": 6
-      },
-      "id": 14
     }
   ]
 }
