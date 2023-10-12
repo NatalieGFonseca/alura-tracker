@@ -3,7 +3,7 @@
 ## About the projetct
 
 ```
-    In this project it was used some new things of Vue3 like :
+    In this project it was used some new things of Vue3 wih TypeScript like :
 
     Use of Vuex in modules and Composition API for architeture.
     Best practices for reuse of components.
