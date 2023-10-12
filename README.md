@@ -3,7 +3,14 @@
 ## About the projetct
 
 ```
-    descricao do que fiz e foi aprendido 
+    In this project it was used some new things of Vue3 like :
+
+    Use of Vuex in modules and Composition API for architeture.
+    Best practices for reuse of components.
+    Reactivity with proxy.
+    Json-server for simulation of the external API.
+    Use of emits.
+
 ```
 
 
@@ -15,6 +22,11 @@ npm install
 ### Compiles and hot-reloads for development
 ```
 npm run serve
+```
+
+### Use of json-server like API for development
+```
+json-server --watch db.json
 ```
 
 ### Compiles and minifies for production

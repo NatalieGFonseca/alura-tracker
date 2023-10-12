@@ -17,7 +17,13 @@
         <div class="select">
           <select v-model="idProjeto">
             <option value="">Selecione o projeto</option>
-            <option :value="projeto.id" v-for="projeto in projetos" :key="projeto.id">{{ projeto.nome }}</option>
+            <option
+              :value="projeto.id"
+              v-for="projeto in projetos"
+              :key="projeto.id"
+            >
+              {{ projeto.nome }}
+            </option>
           </select>
         </div>
       </div>
@@ -28,52 +34,47 @@
   </div>
 </template>
 <script lang="ts">
-import { computed, defineComponent } from "vue";
-import Temporizador from './Temporizador.vue'
+import { computed, defineComponent, ref } from "vue";
+import Temporizador from "./Temporizador.vue";
 import { useStore } from "vuex";
 
-import { key } from '../store'
+import { key } from "../store";
 import { OBTER_PROJETOS } from "@/store/tipo-actions";
 
 export default defineComponent({
   name: "Formulário",
   components: {
-    Temporizador
+    Temporizador,
   },
-  emits: [ 'aoSalvarTarefa'],
-  data(){
-    return {
-      descricao: "",
-      idProjeto: ""
-    }
-  },
-  computed:{
-    
-  },
-  methods: {
-    finalizarTarefa( tempoDecorrido: number) : void {
-      console.log( "Tarefa: "+this.descricao+" Finalizada em: "+tempoDecorrido )
-      const proj = this.projetos.find( proj => proj.id == this.idProjeto )
-      const descricaoProjeto = proj?.nome || ''
-      this.$emit('aoSalvarTarefa', {
+  emits: ["aoSalvarTarefa"],
+  /*props, contexto --- dentro de contexto tem o emit */
+  setup(props, { emit }) {
+    const store = useStore(key);
+    store.dispatch(OBTER_PROJETOS);
+    const descricao = ref("");
+    const idProjeto = ref("");
+    const projetos = computed(() => store.state.projeto.projetos);
+    const finalizarTarefa = (tempoDecorrido: number): void => {
+      const proj = projetos.value.find((proj) => proj.id == idProjeto.value);
+      const descricaoProjeto = proj?.nome || "";
+      emit("aoSalvarTarefa", {
         tempo: tempoDecorrido,
-        descricao: this.descricao === '' ? descricaoProjeto : this.descricao,
-        projeto: this.projetos.find( proj => proj.id == this.idProjeto )
-      })
-      this.descricao = ''
-    },
-  },
-  setup(){
-    const store = useStore(key)
-    store.dispatch(OBTER_PROJETOS)
+        descricao: descricao.value === "" ? descricaoProjeto : descricao.value,
+        projeto: projetos.value.find((proj) => proj.id == idProjeto.value),
+      });
+      descricao.value = "";
+    };
     return {
-      projetos: computed( () => store.state.projeto.projetos )
-    }
-  }
+      descricao,
+      idProjeto,
+      finalizarTarefa,
+      projetos
+    };
+  },
 });
 </script>
 <style>
-.formulario{
+.formulario {
   color: var(--texto-primario);
   background-color: var(--bg-primario);
 }
